@@ -1,5 +1,4 @@
 
-
 ## Backend development workflow
 
 ```json
@@ -24,8 +23,7 @@ la risposta sarà come
  username,
  userId,
  is_candidate,
- is_admin,
- expirationDate: new Date(new Date().getTime() + 3600 * 1000)
+ is_admin
 
 <!-- per fare Login usi questo end point -->
 Post Request
@@ -40,7 +38,6 @@ la risposta sarà come
  username,
  userId,
  is_candidate,
- is_admin,
- expirationDate: new Date(new Date().getTime() + 3600 * 1000)
+ is_admin
 
 
