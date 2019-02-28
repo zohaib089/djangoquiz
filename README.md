@@ -1,10 +1,10 @@
+
 ## Backend development workflow
 
 ```json
 virtualenv env
 pip install -r requirements.txt
 python manage.py runserver
-```
 ```
 <!-- per fare sign up endpoints -->
 Post Request
@@ -17,14 +17,13 @@ per fare request
  password2,
  is_candidate,
  is_admin
-
+ 
 la risposta sarà come
  token,
  username,
  userId,
  is_candidate,
- is_admin,
- expirationDate: new Date(new Date().getTime() + 3600 * 1000)
+ is_admin
 
 <!-- per fare Login usi questo end point -->
 Post Request
@@ -39,7 +38,6 @@ la risposta sarà come
  username,
  userId,
  is_candidate,
- is_admin,
- expirationDate: new Date(new Date().getTime() + 3600 * 1000)
+ is_admin
 
 
