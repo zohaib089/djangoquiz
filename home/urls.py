@@ -10,5 +10,4 @@ urlpatterns = [
     path('users/',include('users.urls')),
     path('evaluationtest/',include('api.evaluationtest.urls')),
     path('graded-evaluationtest/',include('api.graded_evaluationtest.urls')),
-    # re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 ]
