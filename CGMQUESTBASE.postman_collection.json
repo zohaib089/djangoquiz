@@ -237,6 +237,200 @@
 				"description": "per mostrare tutto il test"
 			},
 			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScript\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "per creare una categoria"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScript\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "per mostrare tutte le categorie"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/1/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScript\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/1/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						"1",
+						""
+					]
+				},
+				"description": "per mostrare una singola categoria"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/1/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScriptVeroFalso\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/1/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						"1",
+						""
+					]
+				},
+				"description": "per aggiornare qualsiasi categoria"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/1/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScriptVeroFalso\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/1/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						"1",
+						""
+					]
+				},
+				"description": "per cancellare una categoria"
+			},
+			"response": []
 		}
 	]
 }

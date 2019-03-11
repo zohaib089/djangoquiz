@@ -5,8 +5,8 @@ from rest_framework.status import (
  HTTP_201_CREATED,
  HTTP_400_BAD_REQUEST
 )
-from .models import EvaluationTest,GradeEvaluationText
-from .serializers import EvaluationTestSerializer,GradeEvaluationTextSerializer
+from .models import EvaluationTest,GradeEvaluationText,Category
+from .serializers import EvaluationTestSerializer,GradeEvaluationTextSerializer,CategorySerializer
 from rest_framework.generics import ListAPIView,CreateAPIView
 
 
@@ -49,3 +49,10 @@ class GradeEvaluationTextCreateView(CreateAPIView):
     if GradeEvaluationText:
        return Response(status = HTTP_201_CREATED)
     return Response(status = HTTP_400_BAD_REQUEST)
+class CategoriesViewSet(viewsets.ModelViewSet):
+  serializer_class = CategorySerializer
+  queryset = Category.objects.all()
+  # permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+  #                         IsOwnerOrReadOnly,)
+  def perform_create(self, serializer):
+        serializer.save()
