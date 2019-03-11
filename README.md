@@ -6,6 +6,8 @@ virtualenv env
 pip install -r requirements.txt
 python manage.py runserver
 Install django-remote-debug
+python version 3.x.x
+django verion 2.x.x
 Add django_remote_debug to your INSTALLED_APPS settings
 ./manage.py runsever –remote-debug –noreload
 ```
