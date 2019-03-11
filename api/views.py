@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.status import (
  HTTP_201_CREATED,
  HTTP_400_BAD_REQUEST
@@ -10,9 +11,11 @@ from rest_framework.generics import ListAPIView,CreateAPIView
 
 
 class EvaluationTestViewSet(viewsets.ModelViewSet):
+ 
+ permission_classes = (IsAuthenticated, )
  serializer_class = EvaluationTestSerializer
  queryset = EvaluationTest.objects.all()
-
+ 
  def create(self,request):
   serializer = EvaluationTestSerializer(data=request.data)
   if serializer.is_valid():
