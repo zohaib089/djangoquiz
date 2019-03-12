@@ -1,0 +1,17 @@
+stages:
+  - deploy
+
+deploy-develop:
+  stage: deploy
+
+  script:
+    - ssh cgm-quest@192.168.10.4 "cd ~/back-end && git pull origin master"
+
+  environment:
+    name: staging
+
+  tags:
+    - generic
+
+  only:
+    - master
