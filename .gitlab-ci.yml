@@ -5,7 +5,7 @@ deploy-develop:
   stage: deploy
 
   script:
-    - ssh cgm-quest@192.168.10.4 "cd ~/back-end && git pull origin master"
+    - ssh cgm-quest@192.168.10.16 "cd ~/back-end && git pull origin master"
 
   environment:
     name: staging

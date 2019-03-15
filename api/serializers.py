@@ -6,6 +6,10 @@ from users.models import User
 class StringSerializer(serializers.StringRelatedField):
  def to_internal_value(self,value):
   return value
+class CategorySerializer(serializers.ModelSerializer):
+ class Meta:
+    model = Category
+    fields='__all__'
 
 class QuestionSerializer(serializers.ModelSerializer):
  choices = StringSerializer(many=True)
