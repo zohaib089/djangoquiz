@@ -5,6 +5,8 @@
 virtualenv env
 pip install -r requirements.txt
 python manage.py runserver
+python version 3.x.x
+django verion 2.x.x
 ```
 <!-- per fare sign up endpoints -->
 Post Request

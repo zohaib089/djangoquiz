@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import EvaluationTest,Question,Choice,GradeEvaluationText
+from .models import EvaluationTest,Question,Choice,GradeEvaluationText,Category
 from users.models import User
 
 
@@ -13,9 +13,16 @@ class QuestionSerializer(serializers.ModelSerializer):
   model = Question
   fields = ('id','choices','question','order')
 
+class CategorySerializer(serializers.ModelSerializer):
+ class Meta:
+    model = Category
+    fields='__all__'
+
+    
 class EvaluationTestSerializer(serializers.ModelSerializer):
  questions = serializers.SerializerMethodField()
  admin = StringSerializer(many=False)
+ category = StringSerializer(many=False)
  class Meta:
   model = EvaluationTest
   fields='__all__'
@@ -29,6 +36,9 @@ class EvaluationTestSerializer(serializers.ModelSerializer):
    print(data)
    evaluationtest = EvaluationTest()
    admin= User.objects.get(username=data['admin'])
+   cat=Category.objects.get(id=1)
+   print(cat)
+   evaluationtest.category=cat
    evaluationtest.admin = admin
    evaluationtest.title = data['title']
    evaluationtest.type = data['type']

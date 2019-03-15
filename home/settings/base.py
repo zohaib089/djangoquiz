@@ -12,7 +12,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -68,7 +67,7 @@ SITE_ID = 1
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
         'rest_framework.permissions.IsAdminUser',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -87,7 +86,7 @@ AUTH_USER_MODEL = 'users.User'
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'users.serializers.UserSerializer',
-    "TOKEN_SERIALIZER":'users.serializers.TokenSerializer'
+    "TOKEN_SERIALIZER":'users.serializers.TokenSerializer',
 }
 
 REST_AUTH_REGISTER_SERIALIZERS={

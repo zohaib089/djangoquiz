@@ -26,10 +26,10 @@
 					]
 				},
 				"url": {
-					"raw": "http://d196ea58.ngrok.io/rest-auth/login/",
+					"raw": "http://ab638e5e.ngrok.io/rest-auth/login/",
 					"protocol": "http",
 					"host": [
-						"d196ea58",
+						"ab638e5e",
 						"ngrok",
 						"io"
 					],
@@ -99,7 +99,7 @@
 		{
 			"name": "http://959bdb32.ngrok.io/evaluationtest/",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -114,18 +114,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"admin\":\"fabi\",\n\"title\": \"C++\", \n\"type\": \"C++ test\",\n\"questions\": [{\"title\": \"What is C++?\", \"choices\": [\"it is used to build most advanced apps\", \"it is most complicated Language\", \"it is core lang to build app\"],\n\"answer\": \"it is used to build most advanced apps\"},\n{\"title\": \"C++ is an extension of C with a major addition of the class construct feature of\",\n\"choices\": [\"Simula57\", \"Simula67\", \"Simula47\",\"Simula87\"],\n\"answer\": \"Simula57\"}]\n\t\n}"
+					"raw": "{\"admin\": \"fabii\",\n\"title\": \"angularJsiii\",\n\"type\": \"Angularii\",\n\"category\": 1, \n\"questions\": [{\"title\": \"What is Angula Js ?\",\n\"choices\": [\n\"it is google frame work fr frontend \",\n\"it is most Complicated Language \",\n\"it is not a FrameWork\"],\n\"answer\": \"it is google framework forfrontend\"}\n]\n}"
 				},
 				"url": {
-					"raw": "http://959bdb32.ngrok.io/evaluationtest/",
+					"raw": "http://localhost:8000/evaluationtest/60/",
 					"protocol": "http",
 					"host": [
-						"959bdb32",
-						"ngrok",
-						"io"
+						"localhost"
 					],
+					"port": "8000",
 					"path": [
 						"evaluationtest",
+						"60",
 						""
 					]
 				},
@@ -208,9 +208,248 @@
 		},
 		{
 			"name": "http://959bdb32.ngrok.io/evaluationtest/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 21fe8874dc32938d7e0e7776ae25473591db7fe2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"questions\": [\n        {\n            \"choices\": [\n                \"It is server side Lang1\",\n                \"it is most advanced Language\",\n                \"It is Should be used in every dep\",\n                \"It is server side Lang\"\n            ],\n            \"question\": \"What is Purpose of JavaScript in Modern World\",\n            \"order\": 1\n        },\n        {\n            \"choices\": [\n                \"componentDidMount\"\n            ],\n            \"question\": \"What is Purpose of JavaScript in Modern World\",\n            \"order\": 0\n        }\n    ],\n    \"admin\": \"fabi\",\n    \"category\": \"python\",\n    \"title\": \"PY\",\n    \"type\": \"JavaScript\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/evaluationtest/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"evaluationtest",
+						""
+					]
+				},
+				"description": "per mostrare tutto il test"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScript\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "per creare una categoria"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScript\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "per mostrare tutte le categorie"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/1/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScript\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/1/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						"1",
+						""
+					]
+				},
+				"description": "per mostrare una singola categoria"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/1/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScriptVeroFalso\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/1/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						"1",
+						""
+					]
+				},
+				"description": "per aggiornare qualsiasi categoria"
+			},
+			"response": []
+		},
+		{
+			"name": " http://8e065b8c.ngrok.io/categories/1/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"JavaScriptVeroFalso\"\n}"
+				},
+				"url": {
+					"raw": "http://8e065b8c.ngrok.io/categories/1/",
+					"protocol": "http",
+					"host": [
+						"8e065b8c",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"categories",
+						"1",
+						""
+					]
+				},
+				"description": "per cancellare una categoria"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/evaluationtest/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
 					{
 						"key": "Authorization",
 						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
@@ -219,22 +458,155 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\"admin\": \"fabi\",\n\"title\": \"angularJi\",\n\"type\": \"Angularii\",\n\"category\": 1, \n\"questions\": [{\"title\": \"What is Angula Js ?\",\n\"choices\": [\n\"it is google fr frontend\",\n\"it is most  Language\",\n\"it is  FrameWork\"],\n\"answer\": \"it is google fr frontend\"}\n]\n}"
 				},
 				"url": {
-					"raw": "http://959bdb32.ngrok.io/evaluationtest/",
+					"raw": "http://localhost:8000/evaluationtest/",
 					"protocol": "http",
 					"host": [
-						"959bdb32",
-						"ngrok",
-						"io"
+						"localhost"
 					],
+					"port": "8000",
 					"path": [
 						"evaluationtest",
 						""
 					]
 				},
-				"description": "per mostrare tutto il test"
+				"description": "\r\nper creare un test relativo a una categoria"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/evaluationtest/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"admin\": \"fabi\",\n\"title\": \"Angular Js\",\n\"type\": \"Angular MultiChoice test\",\n\"category\": 1, \n\"questions\": [{\"title\": \"What is Angular Js?\",\n\"choices\": [\n\"it is google frame work for frontend\",\n\"it is most Complicated Language\", \n\"It is Facebook Framework\"],\n\"answer\": \"it is google frame work for frontend\"}\n]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/evaluationtest/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"evaluationtest",
+						""
+					]
+				},
+				"description": "Per ottenere l'elenco dei test creati"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/evaluationtest/63/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"admin\": \"fabi\",\n\"title\": \"Angular Js\",\n\"type\": \"Angular MultiChoice test\",\n\"category\": 1, \n\"questions\": [{\"title\": \"What is Angular Js?\",\n\"choices\": [\n\"it is google frame work for frontend\",\n\"it is most Complicated Language\", \n\"It is Facebook Framework\"],\n\"answer\": \"it is google frame work for frontend\"}\n]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/evaluationtest/63/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"evaluationtest",
+						"63",
+						""
+					]
+				},
+				"description": "per otternere una test con id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/evaluationtest/63/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "token bd7a7d43fc404cce7708e8259e8c9350f7aba834",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"admin\": \"fabi\",\n\"title\": \"Angular Js\",\n\"type\": \"Angular MultiChoice test\",\n\"category\": 1, \n\"questions\": [{\"title\": \"What is Angular Js?\",\n\"choices\": [\n\"it is google frame work for frontend\",\n\"it is most Complicated Language\", \n\"It is Facebook Framework\"],\n\"answer\": \"it is google frame work for frontend\"}\n]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/evaluationtest/63/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"evaluationtest",
+						"63",
+						""
+					]
+				},
+				"description": "per cancellare una test"
 			},
 			"response": []
 		}

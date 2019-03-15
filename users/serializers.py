@@ -34,6 +34,7 @@ class CustomRegisterSerializer(RegisterSerializer):
         adapter.save_user(request, user, self)
         
         return user
+        print(user)
 class TokenSerializer(serializers.ModelSerializer):
        user_type = serializers.SerializerMethodField()
 

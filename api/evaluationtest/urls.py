@@ -3,5 +3,5 @@ from api.views import EvaluationTestViewSet
 
 
 router = DefaultRouter()
-router.register(r'',EvaluationTestViewSet,base_name='evaluationtest')
+router.register(r'',EvaluationTestViewSet,base_name='evaluationtest'),
 urlpatterns=router.urls
