@@ -24,6 +24,7 @@ class EvaluationTestViewSet(viewsets.ModelViewSet):
    if evaluationtest:
     return Response(status = HTTP_201_CREATED)
   return Response(status = HTTP_400_BAD_REQUEST)
+
 class GradedAssignmentListView(ListAPIView):
   serializer_class= GradeEvaluationTextSerializer
 
@@ -55,10 +56,3 @@ class GradeEvaluationTextCreateView(CreateAPIView):
     if GradeEvaluationText:
        return Response(status = HTTP_201_CREATED)
     return Response(status = HTTP_400_BAD_REQUEST)
-class CategoriesViewSet(viewsets.ModelViewSet):
-  serializer_class = CategorySerializer
-  queryset = Category.objects.all()
-  # permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-  #                         IsOwnerOrReadOnly,)
-  def perform_create(self, serializer):
-        serializer.save()

@@ -4,14 +4,6 @@ import re
 from django.utils.translation import ugettext as _
 
 
-class CategoryManager(models.Manager):
-
-    def new_category(self, category):
-        new_category = self.create(category=re.sub('\s+', '-', category)
-                                   .lower())
-
-        new_category.save()
-        return new_category
 
 
 class Category(models.Model):
@@ -20,7 +12,7 @@ class Category(models.Model):
         max_length=250, blank=True,
         unique=True, null=True)
 
-    # objects = CategoryManager()
+   
 
     def __str__(self):
         return self.category
@@ -30,7 +22,7 @@ class EvaluationTest(models.Model):
  category=models.ForeignKey(Category,on_delete=models.CASCADE)
  admin = models.ForeignKey(User,on_delete=models.CASCADE)
  type = models.CharField(max_length=50)
-
+                 
  def __str__(self):
   return self.title
 
@@ -52,10 +44,6 @@ class Choice(models.Model):
 
 class Question(models.Model):
  question = models.CharField(max_length=200)
- category = models.ForeignKey(Category,
-                                 verbose_name=_("Category"),
-                                 blank=True,
-                                 null=True, on_delete=models.CASCADE)
  choices = models.ManyToManyField(Choice)
  answer = models.ForeignKey(Choice,on_delete=models.CASCADE,related_name='answer', blank=True, null=True)
  evaluationtest = models.ForeignKey(EvaluationTest,on_delete=models.CASCADE,related_name='questions', blank=True, null=True)
@@ -63,4 +51,3 @@ class Question(models.Model):
 
  def __str__(self):
   return self.question
-

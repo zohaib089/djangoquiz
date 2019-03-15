@@ -6,10 +6,6 @@ from users.models import User
 class StringSerializer(serializers.StringRelatedField):
  def to_internal_value(self,value):
   return value
-class CategorySerializer(serializers.ModelSerializer):
- class Meta:
-    model = Category
-    fields='__all__'
 
 class QuestionSerializer(serializers.ModelSerializer):
  choices = StringSerializer(many=True)
@@ -40,7 +36,7 @@ class EvaluationTestSerializer(serializers.ModelSerializer):
    print(data)
    evaluationtest = EvaluationTest()
    admin= User.objects.get(username=data['admin'])
-   cat=Category.objects.get(id=1)
+   cat=Category.objects.get(id=data['category'])
    print(cat)
    evaluationtest.category=cat
    evaluationtest.admin = admin
@@ -65,6 +61,42 @@ class EvaluationTestSerializer(serializers.ModelSerializer):
      newQ.save()
      order += 1
    return evaluationtest
+
+#  def update(self,instance,validated_data):
+#   #  data = request.data
+#   #  print(data)
+#   #  evaluationtest = EvaluationTest()
+#   #  admin= User.objects.get('username')
+#   #  cat=Category.objects.get('id')
+#   #  print(cat)
+#   #  instance.category=cat
+    
+#    instance.category = validated_data.get('id',instance.category)
+#    instance.title = validated_data.get('title',instance.title)
+#    instance.type = validated_data.get('type',instance.type)
+#    instance.save()
+
+#    instance = EvaluationTest()
+#   #  keep_questions=[]
+#   #  existing_id=[q.id for q in instance.questions]
+#    order = 1
+#    for q in instance['questions']:
+#      newQ = Question()
+#      newQ.question=q['title']
+#      newQ.order = order
+#      newQ.save()
+
+#      for c in q['choices']:
+#        newC = Choice()
+#        newC.title = c
+#        newC.save()
+#        newQ.choices.add(newC)
+#      newQ.answer = Choice.objects.get(title=q['answer'])
+#      newQ.instance = instance
+#      newQ.save()
+#      order += 1
+#    return instance
+
 
    
 class GradeEvaluationTextSerializer(serializers.ModelSerializer):
